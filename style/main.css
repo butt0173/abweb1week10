@@ -47,3 +47,81 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+/************************************************
+                Main Styles
+************************************************/
+
+.container{
+    /* always give your site a max width */
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: lightpink;
+}
+
+h1{
+    font-size: 2.2em;
+    /* an em is always relative to the current font size, which my default is set to 16px (2.2px x 16px = 35.2px */
+
+    /* you can set padding and margin based on an elements font size with em... */
+    padding: 0.5em; /*0.5 x 35.2 = 17.6px */
+
+    /* an rem is relative to the root font size (either the default
+    of 16px, or whatever font size you set on the html tag */
+    margin-bottom: 1rem; /* 1rem x 16px = 16px */
+}
+
+h3{
+    font-size: 1.6em;
+    padding: 0.5em;
+}
+
+article div{
+    font-size: 36px;
+    padding: 18px;
+    border: 2px solid  purple;
+    background-color: lightcoral; 
+}
+
+section:nth-of-type(1) article{
+    /* nth-child selects an element based on its position in its
+    parent, regardless of what type of elements are there nth-of-type will 
+    only select the element at that position it matches the element type*/
+    padding: 25px; 
+    display:flex; 
+}
+
+section:nth-of-type(2) article{
+    display:flex;
+    /* direction of flex is relative to the language
+    the site is written in */
+    flex-direction:row-reverse;
+}
+
+section:nth-of-type(3) article {
+    display:flex;
+
+    /* there are multiple ways to space the elements in your flexbox or to 
+    justify the content
+    - flex-start, flex-end, and center which move content around
+    -  space-between spreads out the elements with equal space between
+    - space-around spreads the elements with equal space on either side 
+    -space-evenly equally distributes the elements within available spaces*/
+    justify-content: space-around;
+}
+
+section:nth-of-type(4) article {
+    display:flex;
+    gap: 4px;
+}
+
+/* you tell each object inside the flex to grow to take up 
+the available space */
+section:nth-of-type(4) article div{
+    flex-grow:1; 
+}
+
+section:nth-of-type(4) article div:nth-of-type(2){
+    flex-grow:2;
+}
+
